@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: rgb(50, 181, 168);
+}
+
+.scanner {
+    width: 420px;
+    height: 300px;
+    background: rgb(60, 226, 209);
+    padding: 20px 40px;
+    border-radius: 25px;
+    transition: height 0.7s ease;
+}
+
+.scanner.active {
+    height: 450px;
+}
+
+.scanner form {
+    height: 250px;
+    background: white;
+    padding: 10px 20px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+}
+
+.scanner.active form {
+    height: 250px;
+    pointer-events: none;
+}
+
+.scanner form img {
+    display: none;
+    padding: 10px 20px;
+    max-width: 200px;
+}
+
+.scanner.active form img {
+    display: block;
+}
+
+.scanner.active .content {
+    display: none;
+}
+
+
+.content i{
+    font-size: 50px;
+    color: rgb(50, 181, 168);
+}
+
+.content p {
+    font-size: 17px;
+    font-weight: 500;
+    margin-top: 20px;
+}
+
+.details {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.scanner.active .details {
+    opacity: 1;
+    pointer-events: auto;
+    transition: opacity 0.5s 0.5s ease;
+}
+
+.details textarea {
+    width: 100%;
+    height: 70px;
+    padding: 5px;
+    margin-top: 20px;
+    background: white;
+    color: black;
+    border-radius: 10px;
+    resize: none;
+    border: none;
+}
+
+.qrButtons{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.qrButtons button{
+    width: calc(100% / 2 - 10px);
+    padding: 10px 20px;
+    border-radius: 15px;
+    border: none;
+    background: rgb(50, 181, 168);
+    color: black;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 400px) {
+    .scanner {
+        width: 300px;
+        height: 300px;
+    }
+    
+    .scanner.active {
+        height: 450px;
+    }
+
+    .qrButtons button{
+        width: calc(100% / 2 - 10px);
+        padding: 5px 15px;
+    }
+    
+}
